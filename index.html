@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #1f1f1f;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgb(54, 54, 54);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3, p, li {
+            color: white;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        .header {
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            background-color: rgb(92, 92, 92);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: rgb(0, 0, 0);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .close-btn {
+            margin-top: 15px;
+            padding: 5px 10px;
+            background-color: rgb(92, 92, 92);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .info-btn {
+            padding: 5px 10px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Complex Numbers</h1>
+        <button class="info-btn" onclick="openModal()">About the Author</button>
+    </div>
+
+    <div id="authorModal" class="modal">
+        <div class="modal-content">
+            <h2>About the Author</h2>
+            <p>This page was created by Ege Yeşil, a student interested in mathematics and its history, especially the development and applications of complex numbers in algebra and geometry for his 2025-2026 year mathematics project homework</p>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Complex Numbers and Their History</h1>
+        <p>A complex number is a mathematical entity, which consists of two parts. The real part can be any number from the real plane and the complex part contains a real number multiplied with the “imaginary unit” i, where i satisfies the equation i² = -1. Generally, they are shown as a + bi, where a is the real part and b is the imaginary part.</p>
+
+        <p>Some mathematicians in the 14th century came across equations which had negative numbers inside a root as a solution. Gerolamo Cardano (1501-1576) was the first to introduce complex numbers to algebra in the 37th chapter of his book, entitled <i>Ars Magna</i> with an answer to the problem: “Divide 10 in two parts where the product of them equals to 40”. His solution involved a quadratic equation which had two results: 5+√(-15) and 5-√(-15). In the same book, he included a cubic equation as well, which for some values the solution would be complex. However, he never talks about the complex side of that equation.</p>
+
+        <p>In <i>l’Algebra</i>, published in 1572, written by Rafael Bombelli (1526-1572), it was introduced that notation for "√-1", calls it “più di meno”, which means “more or less”, and Bombelli explores aforementioned cubic equation’s previously uncommented complex solutions. After Bombelli, Rene Descartes (1596-1650) discovered the existence of complex numbers and he wrote about them in his treatise. Descartes called the complex numbers “imaginary” as they had no geometric representation in the real plane. In the 16th century Euler used the notation i = √(-1) and proved the formula, which is now called Euler’s formula, e<sup>iθ</sup> = cos(θ) + i sin(θ).</p>
+
+        <p>In the 19th century Jean-Robert Argand (1768-1822) led another breakthrough in complex numbers. He was the first to use the polar coordinate system to represent complex numbers, also called Argand plane. These were the major contributions to the subject of complex numbers and today, these numbers have many uses such as fractal geometry, algebraic number theory, complex analysis, improper integrals, linear algebra and in many different branches of physics.</p>
+
+        <h2>Leonhard Euler</h2>
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thoughtco.com%2Fthmb%2FzQVURyBy9poM2z-GYY3XoAPKyAs%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Feuler2-5baa451cc9e77c005008b61e.png&f=1&nofb=1&ipt=d25a634147d6a468cfc5da37f4eb405ebe495888706edc0909e818973c870908">
+        <h2>Operations in Complex Numbers</h2>
+        <p>Just like in real numbers, mathematical operations can be done in complex numbers as well. In all operations i needs to be treated like a variable in an algebraic expression. Four examples will be given to make the reader understand better the four operations in complex numbers:</p>
+        <p>(5 + 2i) + (2 + 5i) = 7 + 7i</p>
+        <p>(4 + 7i) – (8 + 2i) = -4 + 5i</p>
+        <p>(2 + 3i) * (1 + 5i) = -13 + 13i</p>
+        <p>64 / (16 + 4i) = 4(16) / 4(4 + i) = 16 / (4 + i) = 16 × (4 - i) / (4 + i)(4 - i) = (64 - 16i) / 17 = 64/17 - 16i/17</p>
+
+        <h2>The Polar Form</h2>
+
+        <h3>Explanation of the Polar Form</h3>
+        <p>As it was written in the first chapter Jean-Robert Argand used the polar coordinate system to express complex numbers. In both the cartesian coordinate system and the polar coordinate system, there are two variables used to show the place of a point. In cartesian coordinates these variables are x and y. In polar coordinate system these variables are r and theta (in some sources it is also called phi). The value of r shows how far away from the origin the point is, and theta shows in which angle the point is at.</p>
+
+        <h3>The Polar Coordinate System</h3>
+        <p>Representing complex numbers in this way is beneficial as it unlocks another way to mathematically write them: re<sup>iθ</sup>. With this way of writing, multiplication, division, powers and the affect it has on the point’s rotation can be easily understood. Another benefit of representing complex numbers in such form is the identity re<sup>iθ</sup> = r cos(θ) + i r sin(θ) = x + iy. It links polar representation with cartesian representation.</p>
+
+        <h3>Proof:</h3>
+        <p>Let e<sup>z</sup> = ∑(z<sup>n</sup> / n!) from n = 0 to ∞ (which is the sum representation of the Euler’s constant)</p>
+        <p>Let z = iθ</p>
+        <p>When the z in the series is replaced with iθ it looks like: 1 + iθ - θ²/2! + (iθ)³/3! + θ⁴/4! …</p>
+        <p>Grouping the terms becomes the Taylor series representation of cosine and sine:</p>
+        <p>(1 - θ²/2! + θ⁴/4! …) + i(θ - θ³/3! + θ⁵/5! …)</p>
+        <p>Resulting in the formula: cos(θ) + i sin(θ)</p>
+
+        <h2>Geometric Contributions of the Complex Numbers</h2>
+        <p>When two numbers—one being real or imaginary and the other being imaginary—are multiplied, the product is another complex number. This multiplication can be interpreted geometrically as a rotation and scaling in the complex plane. To understand why, we turn to the polar form of complex numbers. Any complex number can be represented in the form r<sup>iθ</sup>, where r is the modulus (distance from the origin), and θ is the argument (angle with the positive real axis).</p>
+
+        <p>This form reveals the geometric nature of complex multiplication. When multiplying two complex numbers in polar form: z₁ = r₁ e<sup>iθ₁</sup>, z₂ = r₂ e<sup>iθ₂</sup></p>
+        <p>Their product is: z₁ × z₂ = (r₁ × r₂)e<sup>i(θ₁ + θ₂)</sup></p>
+        <p>This shows that the magnitudes are multiplied, and the angles (arguments) are added. In the complex plane, this means the resulting number is scaled by r₂ and rotated counterclockwise by θ₂ from z₁’s direction. For example, multiplying a number by i (which is e<sup>iπ/2</sup>) rotates the number 90 degrees counterclockwise. If you start with 1, a real number lying on the positive real axis, and multiply it by i, you get i, which lies on the positive imaginary axis—exactly a quarter turn.</p>
+
+        <p>This geometric behavior becomes even more apparent when visualizing powers of a complex number. For instance, raising a complex number to a power repeatedly results in the point spinning around the origin, tracing a spiral if the magnitude isn’t 1, or forming a circle if the magnitude is exactly 1. Therefore, the complex number system doesn’t just allow for extended algebraic operations—it enriches our understanding of transformations in the plane, providing a beautiful connection between algebra and geometry.</p>
+
+        <h2>Conversion Between the Two Forms</h2>
+        <p>To find the magnitude of a number in the polar system, if the number is expressed as a + bi, one could apply the operation √(a² + b²). If the number has only a real part without a complex part the magnitude will be the absolute value of the number. The argument of a number, generally expressed as arg(a), refers to the point’s direction or the theta variable in polar coordinates.</p>
+
+        <p>The argument can be computed using: θ = tan<sup>-1</sup>(b/a). The reason arctan function is used is tan(θ) = opposite/adjacent = b/a. However, quadrant checks are needed:</p>
+        <ul>
+          <li>If a &lt; 0 and b ≥ 0, add π radians</li>
+          <li>If a &lt; 0 and b &lt; 0, subtract π radians</li>
+          <li>If a = 0 and b &gt; 0, θ = π/2</li>
+          <li>If a = 0 and b &lt; 0, θ = -π/2</li>
+        </ul>
+        <p>The reason for this is that the tan function only returns values between -90 and +90 degrees.</p>
+
+        <h2>The Algebraic Contributions of Complex Numbers</h2>
+
+        <h3>Roots of Unity</h3>
+        <p>Complex numbers can also reveal the otherwise impossible roots of equations, with a concept called roots of unity. The original roots of unity tells us that for xⁿ = 1 we can perform the following: e<sup>i 2kπ/n</sup> where n - 1 ≥ k ≥ 0 and all of the numbers that k can take are the solutions to the equation.</p>
+
+        <p>A more general formula is |a|<sup>1/n</sup> e<sup>i((arg(a) + 2kπ) / n)</sup> = x such that xⁿ = a. If a is positive the argument simplifies to 0 and if a is negative the argument is -π.</p>
+
+        <p>The fundamental theorem of algebra states that every polynomial of n degree has n roots. These roots may be real or complex. For instance, the equation x³ = 1 with using roots of unity we can find three solutions: 1, e<sup>i 2π/3</sup>, e<sup>i 4π/3</sup>. In the polar coordinates these points are perfectly spaced out from each other: 1 is at 0 degrees, e<sup>i 2π/3</sup> is at 120 degrees and e<sup>i 4π/3</sup> is at 240 degrees.</p>
+
+        <h3>The Quadratic Formula</h3>
+        <p>A fundamental method for finding the roots of a quadratic equation is the quadratic formula. This formula applies specifically to quadratic equations, which take the standard form: ax² + bx + c = 0, where a ≠ 0.</p>
+
+        <p>The quadratic formula is:</p>
+        <p>x = (-b ± √Δ) / 2a</p>
+
+        <p>Where Δ = b² - 4ac is the discriminant, which determines the nature of the roots:</p>
+        <ul>
+          <li>Δ &gt; 0: Two distinct real roots</li>
+          <li>Δ = 0: One real root (a double root)</li>
+          <li>Δ &lt; 0: Two complex (imaginary) roots</li>
+        </ul>
+
+        <p>If Δ is negative, the square root involves i, leading to complex conjugate solutions. This formula not only provides an algebraic method for solving quadratic equations but also connects to deeper mathematical concepts like complex numbers and the Fundamental Theorem of Algebra.</p>
+
+        <h2>Bibliography</h2>
+        <p>Argand, M., <i>Imaginary Quantities: Their Geometrical Interpretation</i>, çev: S. Hardy, Van Nostrand, New York, 1881</p>
+        <p>Campbell, George A., “Cisoidal Oscillations”, AIEE, 1911, <a href="https://ia800708.us.archive.org/view_archive.php?archive=/28/items/crossref-pre-1923-scholarly-works/10.1109%252Fpaiee.1910.6660428.zip&file=10.1109%252Fpaiee.1911.6659711.pdf">Link</a></p>
+        <p>Merino, Orlando, <i>A Short History of Complex Numbers</i>, <a href="https://www.math.uri.edu/~merino/spring06/mth562/ShortHistoryComplexNumbers2006.pdf">Link</a></p>
+        <p>Nahin, Paul J., <i>An Imaginary Tale, The Story of i</i>, Princeton University Press, Princeton, 1998</p>
+        <p>Solomentsev, E.D., “Complex Number”, Encyclopedia of Mathematics, <a href="http://encyclopediaofmath.org/index.php?title=Complex_number&oldid=53376">Link</a></p>
+        <p><a href="https://tr.khanacademy.org/math/precalculus/imaginary-and-complex-numbers">Khan Academy (Turkish)</a></p>
+        <p><a href="https://www.derspresso.com.tr/matematik/karmasik-sayi/modul">Derspresso</a></p>
+
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('authorModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('authorModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('authorModal');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
