@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #1f1f1f;
         }
         .container {
@@ -30,19 +30,28 @@
             border-radius: 5px;
         }
         .header {
-            padding: 10px;
+            padding: 20px;
             position: sticky;
             top: 0;
             left: 0;
-            background-color: rgb(92, 92, 92);
+            background-color: rgb(52, 52, 52); /* Slightly darker background for more contrast */
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 2px solid rgb(92, 92, 92); /* Adding a subtle border for separation */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* A soft shadow for depth */
         }
 
         .header h1 {
             margin: 0;
+            flex-grow: 1; /* This will ensure the title takes up remaining space */
+            text-align: center; /* Center the title */
+        }
+
+        .info-btn:hover {
+            background-color: rgb(92, 92, 92);
+            color: white;
         }
 
         .modal {
@@ -77,12 +86,14 @@
         }
 
         .info-btn {
-            padding: 5px 10px;
+            padding: 8px 15px;
             background-color: white;
             color: black;
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
     </style>
 </head>
@@ -95,7 +106,7 @@
     <div id="authorModal" class="modal">
         <div class="modal-content">
             <h2>About the Author</h2>
-            <p>This page was created by Ege Yeşil, a student interested in mathematics and its history, especially the development and applications of complex numbers in algebra and geometry for his 2025-2026 year mathematics project homework</p>
+            <p>This page was created by Ege Yeşil; a student interested in mathematics and its history, especially the development and applications of complex numbers in algebra and geometry, for his 2025-2026 year mathematics project homework</p>
             <button class="close-btn" onclick="closeModal()">Close</button>
         </div>
     </div>
@@ -109,8 +120,9 @@
 
         <p>In the 19th century Jean-Robert Argand (1768-1822) led another breakthrough in complex numbers. He was the first to use the polar coordinate system to represent complex numbers, also called Argand plane. These were the major contributions to the subject of complex numbers and today, these numbers have many uses such as fractal geometry, algebraic number theory, complex analysis, improper integrals, linear algebra and in many different branches of physics.</p>
 
-        <h2>Leonhard Euler</h2>
+        
         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thoughtco.com%2Fthmb%2FzQVURyBy9poM2z-GYY3XoAPKyAs%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Feuler2-5baa451cc9e77c005008b61e.png&f=1&nofb=1&ipt=d25a634147d6a468cfc5da37f4eb405ebe495888706edc0909e818973c870908">
+        <p>Leonhard Euler</p>
         <h2>Operations in Complex Numbers</h2>
         <p>Just like in real numbers, mathematical operations can be done in complex numbers as well. In all operations i needs to be treated like a variable in an algebraic expression. Four examples will be given to make the reader understand better the four operations in complex numbers:</p>
         <p>(5 + 2i) + (2 + 5i) = 7 + 7i</p>
@@ -133,19 +145,11 @@
         <p>Grouping the terms becomes the Taylor series representation of cosine and sine:</p>
         <p>(1 - θ²/2! + θ⁴/4! …) + i(θ - θ³/3! + θ⁵/5! …)</p>
         <p>Resulting in the formula: cos(θ) + i sin(θ)</p>
-
-        <h2>Geometric Contributions of the Complex Numbers</h2>
-        <p>When two numbers—one being real or imaginary and the other being imaginary—are multiplied, the product is another complex number. This multiplication can be interpreted geometrically as a rotation and scaling in the complex plane. To understand why, we turn to the polar form of complex numbers. Any complex number can be represented in the form r<sup>iθ</sup>, where r is the modulus (distance from the origin), and θ is the argument (angle with the positive real axis).</p>
-
-        <p>This form reveals the geometric nature of complex multiplication. When multiplying two complex numbers in polar form: z₁ = r₁ e<sup>iθ₁</sup>, z₂ = r₂ e<sup>iθ₂</sup></p>
-        <p>Their product is: z₁ × z₂ = (r₁ × r₂)e<sup>i(θ₁ + θ₂)</sup></p>
-        <p>This shows that the magnitudes are multiplied, and the angles (arguments) are added. In the complex plane, this means the resulting number is scaled by r₂ and rotated counterclockwise by θ₂ from z₁’s direction. For example, multiplying a number by i (which is e<sup>iπ/2</sup>) rotates the number 90 degrees counterclockwise. If you start with 1, a real number lying on the positive real axis, and multiply it by i, you get i, which lies on the positive imaginary axis—exactly a quarter turn.</p>
-
-        <p>This geometric behavior becomes even more apparent when visualizing powers of a complex number. For instance, raising a complex number to a power repeatedly results in the point spinning around the origin, tracing a spiral if the magnitude isn’t 1, or forming a circle if the magnitude is exactly 1. Therefore, the complex number system doesn’t just allow for extended algebraic operations—it enriches our understanding of transformations in the plane, providing a beautiful connection between algebra and geometry.</p>
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1.bp.blogspot.com%2F-CnEM3ZjHHzw%2FYOs1AiRJ1zI%2FAAAAAAAAEt0%2FAgwrtLYX6EIvFmwk4o3H8dDlAz-3L3S9gCLcBGAsYHQ%2Fs1473%2Fpolar_coordinate_system04.png&f=1&nofb=1&ipt=f8a1aacb151531fa5cf8c077cf2d3c9d0e9e97d4bef967d882eba11dd6c2cc12">
+        <p>The Polar Coordinate System</p>
 
         <h2>Conversion Between the Two Forms</h2>
         <p>To find the magnitude of a number in the polar system, if the number is expressed as a + bi, one could apply the operation √(a² + b²). If the number has only a real part without a complex part the magnitude will be the absolute value of the number. The argument of a number, generally expressed as arg(a), refers to the point’s direction or the theta variable in polar coordinates.</p>
-
         <p>The argument can be computed using: θ = tan<sup>-1</sup>(b/a). The reason arctan function is used is tan(θ) = opposite/adjacent = b/a. However, quadrant checks are needed:</p>
         <ul>
           <li>If a &lt; 0 and b ≥ 0, add π radians</li>
@@ -155,30 +159,50 @@
         </ul>
         <p>The reason for this is that the tan function only returns values between -90 and +90 degrees.</p>
 
-        <h2>The Algebraic Contributions of Complex Numbers</h2>
+        <h2>Geometric Contributions of the Complex Number Multiplication</h2>
+        <p>When two numbers—one being real or imaginary and the other being imaginary—are multiplied, the product is another complex number. This multiplication can be interpreted geometrically as a rotation and scaling in the complex plane. To understand why, we turn to the polar form of complex numbers. Any complex number can be represented in the form re<sup>iθ</sup>, where r is the modulus (distance from the origin), and θ is the argument (angle with the positive real axis).</p>
+        <p>This form reveals the geometric nature of complex multiplication. When multiplying two complex numbers in polar form: z₁ = r₁ e<sup>iθ₁</sup>, z₂ = r₂ e<sup>iθ₂</sup></p>
+        <p>Their product is: z₁ × z₂ = (r₁ × r₂)e<sup>i(θ₁ + θ₂)</sup></p>
+        <p>This shows that the magnitudes are multiplied, and the angles (arguments) are added. In the complex plane, this means the resulting number is scaled by r₂ and rotated counterclockwise by θ₂ from z₁’s direction. For example, multiplying a number by i (which is e<sup>iπ/2</sup>) rotates the number 90 degrees counterclockwise. If you start with 1, a real number lying on the positive real axis, and multiply it by i, you get i, which lies on the positive imaginary axis—exactly a quarter turn.</p>
+        <p>This geometric behavior becomes even more apparent when visualizing powers of a complex number. For instance, raising a complex number to a power repeatedly results in the point spinning around the origin, tracing a spiral if the magnitude isn’t 1, or forming a circle if the magnitude is exactly 1. Therefore, the complex number system doesn’t just allow for extended algebraic operations—it enriches our understanding of transformations in the plane, providing a beautiful connection between algebra and geometry.</p>
 
+        <h2>Complex Conjugates and Their Geometric Meaning</h2>
+        <p>Every complex number has a corresponding conjugate, which plays a crucial role in both algebraic manipulation and geometric understanding of complex numbers.</p>
+        <p>Given a complex number:</p>
+        <p><strong>z = a + bi</strong></p>
+        <p>its conjugate is written as:</p>
+        <p><strong>z̅ = a − bi</strong> (where z̅ is the conjugate of z — that's a z with an overline).</p>
+        <p>Algebraically, this simply flips the sign of the imaginary part. Geometrically, the conjugate reflects the complex number across the real axis in the complex plane. This reflection can be visualized as taking a point and mirroring it downward (or upward), keeping its distance from the real axis the same, but reversing its angle.</p>
+        <p>For example:</p>
+        <p><strong>z = 3 + 4i, then z̅ = 3 − 4i</strong></p>
+        <p>This is a mirror image of the original point across the x-axis.</p>
+        <p>One of the most important properties of conjugates is that the product of a complex number and its conjugate is always a real number:</p>
+        <p><strong>z × z̅ = (a + bi)(a − bi) = a² + b²</strong></p>
+        <p>This result represents the square of the modulus of the complex number. This identity is extremely useful when dividing complex numbers or rationalizing denominators, as it removes the imaginary part.</p>
+        <p>In polar form:</p>
+        <p><strong>z = re<sup>iθ</sup></strong>, the conjugate is: <strong>z̅ = re<sup>−iθ</sup></strong>.</p>
+        <p>Here, the angle is negated while the magnitude <strong>r</strong> remains unchanged — emphasizing that conjugation is essentially a reversal of rotation.</p>
+        <p>If we graph a complex number and its conjugate in the polar system, two numbers directing in the opposite direction would be seen.</p>
+
+        <h2>The Algebraic Contributions of Complex Numbers</h2>
         <h3>Roots of Unity</h3>
         <p>Complex numbers can also reveal the otherwise impossible roots of equations, with a concept called roots of unity. The original roots of unity tells us that for xⁿ = 1 we can perform the following: e<sup>i 2kπ/n</sup> where n - 1 ≥ k ≥ 0 and all of the numbers that k can take are the solutions to the equation.</p>
-
         <p>A more general formula is |a|<sup>1/n</sup> e<sup>i((arg(a) + 2kπ) / n)</sup> = x such that xⁿ = a. If a is positive the argument simplifies to 0 and if a is negative the argument is -π.</p>
-
         <p>The fundamental theorem of algebra states that every polynomial of n degree has n roots. These roots may be real or complex. For instance, the equation x³ = 1 with using roots of unity we can find three solutions: 1, e<sup>i 2π/3</sup>, e<sup>i 4π/3</sup>. In the polar coordinates these points are perfectly spaced out from each other: 1 is at 0 degrees, e<sup>i 2π/3</sup> is at 120 degrees and e<sup>i 4π/3</sup> is at 240 degrees.</p>
 
         <h3>The Quadratic Formula</h3>
         <p>A fundamental method for finding the roots of a quadratic equation is the quadratic formula. This formula applies specifically to quadratic equations, which take the standard form: ax² + bx + c = 0, where a ≠ 0.</p>
-
         <p>The quadratic formula is:</p>
         <p>x = (-b ± √Δ) / 2a</p>
-
         <p>Where Δ = b² - 4ac is the discriminant, which determines the nature of the roots:</p>
         <ul>
           <li>Δ &gt; 0: Two distinct real roots</li>
           <li>Δ = 0: One real root (a double root)</li>
           <li>Δ &lt; 0: Two complex (imaginary) roots</li>
         </ul>
-
         <p>If Δ is negative, the square root involves i, leading to complex conjugate solutions. This formula not only provides an algebraic method for solving quadratic equations but also connects to deeper mathematical concepts like complex numbers and the Fundamental Theorem of Algebra.</p>
 
+        <hr>
         <h2>Bibliography</h2>
         <p>Argand, M., <i>Imaginary Quantities: Their Geometrical Interpretation</i>, çev: S. Hardy, Van Nostrand, New York, 1881</p>
         <p>Campbell, George A., “Cisoidal Oscillations”, AIEE, 1911, <a href="https://ia800708.us.archive.org/view_archive.php?archive=/28/items/crossref-pre-1923-scholarly-works/10.1109%252Fpaiee.1910.6660428.zip&file=10.1109%252Fpaiee.1911.6659711.pdf">Link</a></p>
